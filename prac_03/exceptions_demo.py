@@ -20,5 +20,7 @@ except ValueError:
 print("Finished.")
 
 # 1. A ValueError will occur when the input isn't an integer.
+# Broadly speaking, it will occur when a function (e.g. int()) receives the correct
+# type but invalid value.
 # 2. A ZeroDivisionError will occur when the input for the denominator is a 0.
 # 3. Yes, via a while loop check for example, as shown above.
