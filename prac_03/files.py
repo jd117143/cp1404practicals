@@ -1,3 +1,8 @@
+"""
+CP1404 - Practical 3
+File reading and writing examples.
+"""
+
 # 1. Write name to file
 name = input("Name: ")
 out_file = open("name.txt", 'w')

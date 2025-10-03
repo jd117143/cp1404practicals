@@ -1,6 +1,7 @@
 """
-CP1404/CP5632 - Practical
-Password checker "skeleton" code to help you get started
+CP1404 - Practical 3
+Password checker that validates length, uppercase, lowercase, digits,
+and (optionally) special characters.
 """
 
 MIN_LENGTH = 2

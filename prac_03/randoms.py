@@ -1,3 +1,8 @@
+"""
+CP1404 - Practical 3
+Demonstrates Python's random module with randint, randrange, and uniform.
+"""
+
 import random
 
 # Q: What did you see on line 1?

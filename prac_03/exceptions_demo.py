@@ -1,6 +1,7 @@
 """
-CP1404/CP5632 - Practical
-Answer the following questions:
+CP1404 - Practical 3
+Demonstrates exception handling with ValueError and ZeroDivisionError.
+Includes answers to:
 1. When will a ValueError occur?
 2. When will a ZeroDivisionError occur?
 3. Could you change the code to avoid the possibility of a ZeroDivisionError?
@@ -20,4 +21,4 @@ print("Finished.")
 
 # 1. A ValueError will occur when the input isn't an integer.
 # 2. A ZeroDivisionError will occur when the input for the denominator is a 0.
-# 3. Yes, via a while loop check for example.
+# 3. Yes, via a while loop check for example, as shown above.
