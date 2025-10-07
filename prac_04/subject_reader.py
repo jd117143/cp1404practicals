@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 Practical
+CP1404 - Practical 4
 Data file -> lists program
 """
 
@@ -7,8 +7,13 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    data = load_data(FILENAME)
-    print(data)
+    subjects = load_data(FILENAME)
+    display_subjects(subjects)
+
+
+def display_subjects(subjects):
+    for subject in subjects:
+        print(f"{subject[0]} is taught by {subject[1]} and has {subject[2]} students")
 
 
 def load_data(filename=FILENAME):
