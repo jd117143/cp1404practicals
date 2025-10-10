@@ -7,6 +7,11 @@ LINE_NUMBER = 6
 
 def main():
     number_of_quick_picks = int(input("How many quick picks? "))
+
+    while number_of_quick_picks < 0:
+        print("Try again")
+        number_of_quick_picks = int(input("How many quick picks? "))
+
     for pick_number in range(number_of_quick_picks):
         quick_picks = []
         generate_numbers(quick_picks)
