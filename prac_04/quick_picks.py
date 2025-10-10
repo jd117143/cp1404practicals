@@ -7,16 +7,17 @@ LINE_NUMBER = 6
 
 def main():
     number_of_quick_picks = int(input("How many quick picks? "))
-    for i in range(number_of_quick_picks):
+    for pick_number in range(number_of_quick_picks):
         quick_picks = []
         generate_numbers(quick_picks)
         print(" ".join(f"{number:2}" for number in sorted(quick_picks)))
 
 
 def generate_numbers(quick_picks):
-    for j in range(LINE_NUMBER):
+    while len(quick_picks) < LINE_NUMBER:
         number = randint(MIN_NUMBER, MAX_NUMBER)
-        quick_picks.append(number)
+        if number not in quick_picks:
+            quick_picks.append(number)
 
 
 main()
