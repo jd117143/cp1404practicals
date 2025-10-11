@@ -1,3 +1,9 @@
+"""
+CP1404 - Practical 4
+Prompt user for 5 numbers, display summary information +
+Perform a simple username access check.
+"""
+
 numbers = []
 for i in range(5):
     number = int(input("Number: "))

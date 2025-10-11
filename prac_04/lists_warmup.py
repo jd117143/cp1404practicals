@@ -1,3 +1,8 @@
+"""
+CP1404 - Practical 4
+Basic list exercises: operations, indexing, slicing, etc.
+"""
+
 numbers = [3, 1, 4, 1, 5, 9, 2]
 
 # numbers[0] = 3

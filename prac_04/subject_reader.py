@@ -7,12 +7,13 @@ FILENAME = "subject_data.txt"
 
 
 def main():
+    """Get subject data from file and display it."""
     subjects = load_data(FILENAME)
     display_subjects(subjects)
 
 
 def load_data(filename=FILENAME):
-    """Read data from file formatted like: subject,lecturer,number of students."""
+    """Load data from file formatted as: subject, lecturer, number of students."""
     subjects = []
     input_file = open(filename)
     for line in input_file:
@@ -25,6 +26,7 @@ def load_data(filename=FILENAME):
 
 
 def display_subjects(subjects):
+    """Display subjects, lecturers, and student numbers in aligned columns."""
     max_subject_len = max(len(subject[0]) for subject in subjects)
     max_teacher_len = max(len(subject[1]) for subject in subjects)
     max_students_len = max(len(str(subject[2])) for subject in subjects)

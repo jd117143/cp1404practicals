@@ -1,3 +1,8 @@
+"""
+CP1404 - Practical 4
+Quick picks lottery generator.
+"""
+
 from random import randint
 
 MIN_NUMBER = 1
@@ -6,6 +11,7 @@ LINE_NUMBER = 6
 
 
 def main():
+    """Get number of quick picks and display them."""
     number_of_quick_picks = int(input("How many quick picks? "))
 
     while number_of_quick_picks < 0:
@@ -19,6 +25,7 @@ def main():
 
 
 def generate_numbers(quick_picks):
+    """Generate 6 unique random numbers."""
     while len(quick_picks) < LINE_NUMBER:
         number = randint(MIN_NUMBER, MAX_NUMBER)
         if number not in quick_picks:
