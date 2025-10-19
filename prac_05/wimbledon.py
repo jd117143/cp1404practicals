@@ -9,25 +9,25 @@ FILENAME = "wimbledon.csv"
 
 
 def main():
-    data = load_data(FILENAME)
-    countries, champion_to_count = process_data(data)
+    entries = load_data(FILENAME)
+    countries, champion_to_count = process_data(entries)
     display_results(countries, champion_to_count)
 
 
 def load_data(filename=FILENAME):
-    data = []
+    entries = []
     with open(filename, "r", encoding="utf-8-sig") as in_file:
         in_file.readline()
         for line in in_file:
-            data.append(line.strip().split(','))
-    return data
+            entries.append(line.strip().split(','))
+    return entries
 
 
-def process_data(data):
-    countries = {entry[1] for entry in data}
+def process_data(entries):
+    countries = {entry[1] for entry in entries}
 
     champion_to_count = {}
-    for entry in data:
+    for entry in entries:
         champion = entry[2]
         count = champion_to_count.get(champion, 0)
         champion_to_count[champion] = count + 1
