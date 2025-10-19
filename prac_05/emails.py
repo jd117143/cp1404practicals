@@ -2,7 +2,7 @@
 CP1404 - Practical 5
 Email to name dictionary
 Estimate: 40 minutes
-Actual:
+Actual: 33 minutes
 """
 
 
