@@ -1,6 +1,8 @@
 """
 CP1404 - Practical 5
 Program counts word occurrences in a string
+Estimate: 30 minutes
+Actual: 42 minutes
 """
 
 word_to_count = {}
