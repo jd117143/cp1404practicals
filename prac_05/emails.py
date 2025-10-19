@@ -10,10 +10,10 @@ def main():
     """Store a dictionary of emails to names and display them."""
     email_to_name = {}
     email = input("Email: ").strip()
-    while email != "":
+    while email != '':
         name = extract_name(email)
         name_check = input(f"Is your name {name} (Y/n) ").strip().upper()
-        if name_check != 'Y':
+        if name_check != 'Y' and name_check != '':
             name = input("Name: ").strip()
         email_to_name[email] = name
         email = input("Email: ").strip()
