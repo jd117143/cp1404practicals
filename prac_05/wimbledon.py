@@ -10,7 +10,7 @@ FILENAME = "wimbledon.csv"
 
 def main():
     data = load_data(FILENAME)
-    print(data)
+    countries, champion_to_count = process_data(data)
 
 
 def load_data(filename=FILENAME):
@@ -20,6 +20,17 @@ def load_data(filename=FILENAME):
         for line in in_file:
             data.append(line.strip().split(','))
     return data
+
+
+def process_data(data):
+    countries = {entry[1] for entry in data}
+
+    champion_to_count = {}
+    for entry in data:
+        champion = entry[2]
+        count = champion_to_count.get(champion, 0)
+        champion_to_count[champion] = count + 1
+    return countries, champion_to_count
 
 
 main()
