@@ -9,12 +9,14 @@ FILENAME = "wimbledon.csv"
 
 
 def main():
+    """Run the Wimbledon data program."""
     entries = load_data(FILENAME)
     countries, champion_to_count = process_data(entries)
     display_results(countries, champion_to_count)
 
 
 def load_data(filename=FILENAME):
+    """Load data from CSV file and return a list of entries."""
     entries = []
     with open(filename, "r", encoding="utf-8-sig") as in_file:
         in_file.readline()
@@ -24,6 +26,7 @@ def load_data(filename=FILENAME):
 
 
 def process_data(entries):
+    """Extract countries and count how many times each champion has won."""
     countries = {entry[1] for entry in entries}
 
     champion_to_count = {}
@@ -35,6 +38,7 @@ def process_data(entries):
 
 
 def display_results(countries, champion_to_count):
+    """Display champions with their win counts and the list of countries."""
     print("Wimbledon Champions: ")
     for champion, count in champion_to_count.items():
         print(f"{champion} {count}")
