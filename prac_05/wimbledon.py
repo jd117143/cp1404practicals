@@ -2,7 +2,7 @@
 CP1404 - Practical 5
 Read, process, and display Wimbledon champions data
 Estimate: 50 minutes
-Actual:
+Actual: 57 minutes
 """
 
 FILENAME = "wimbledon.csv"
