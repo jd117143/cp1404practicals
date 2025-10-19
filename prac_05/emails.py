@@ -9,14 +9,14 @@ Actual:
 def main():
     """Store a dictionary of emails to names and display them."""
     email_to_name = {}
-    email = input("Email: ")
+    email = input("Email: ").strip()
     while email != "":
         name = extract_name(email)
-        name_check = input(f"Is your name {name} (Y/n) ").upper()
+        name_check = input(f"Is your name {name} (Y/n) ").strip().upper()
         if name_check != 'Y':
-            name = input("Name: ")
+            name = input("Name: ").strip()
         email_to_name[email] = name
-        email = input("Email: ")
+        email = input("Email: ").strip()
 
     for email, name in email_to_name.items():
         print(f"{name} ({email})")
