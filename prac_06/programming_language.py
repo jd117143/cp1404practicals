@@ -8,7 +8,8 @@ Actual:
 
 class ProgrammingLanguage:
     """Represent a ProgrammingLanguage object with key characteristics"""
-    def __init__(self, typing="", reflection=False, year=0):
+
+    def __init__(self, name="", typing="", reflection=False, year=0):
         """Initialise a ProgrammingLanguage instance.
 
         name: string, name of the language
@@ -16,6 +17,7 @@ class ProgrammingLanguage:
         reflection: boolean, whether the language supports reflection
         year: integer, year the language first appeared
         """
+        self.name = name
         self.typing = typing
         self.reflection = reflection
         self.year = year
