@@ -1,6 +1,8 @@
 """
 CP1404 - Practical 6
 ProgrammingLanguage client code.
+Estimate: 20 minutes
+Actual: 24 minutes
 """
 from prac_06.programming_language import ProgrammingLanguage
 
