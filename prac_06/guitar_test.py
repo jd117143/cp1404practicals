@@ -9,6 +9,7 @@ from prac_06.guitar import Guitar
 
 
 def main():
+    """Test Guitar class."""
     gibson = Guitar("Gibson L-5 CES", 1922, 16035.40)
     line = Guitar("Line 6 JTV-59", 2010, 1512.9)
     print(f"{gibson.name} get_age() - Expected {103}. Got {gibson.get_age()}")
@@ -17,4 +18,5 @@ def main():
     print(f"{line.name} is_vintage() - Expected {True}. Got {line.is_vintage()}")
 
 
-main()
+if __name__ == "__main__":
+    main()
