@@ -2,7 +2,7 @@
 CP1404 - Practical 6
 Guitar class module.
 Estimate: 15 minutes
-Actual:
+Actual: 12 minutes
 """
 
 
@@ -31,5 +31,5 @@ class Guitar:
         return Guitar.CURRENT_YEAR - self.year
 
     def is_vintage(self):
-        """Return True is the guitar is more than or equal to VINTAGE_AGE."""
+        """Return True if the guitar is more than or equal to VINTAGE_AGE."""
         return self.get_age() >= Guitar.VINTAGE_AGE
