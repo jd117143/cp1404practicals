@@ -15,7 +15,7 @@ def main():
     print(f"{gibson.name} get_age() - Expected {103}. Got {gibson.get_age()}")
     print(f"{line.name} get_age() - Expected {15}. Got {line.get_age()}")
     print(f"{gibson.name} is_vintage() - Expected {True}. Got {gibson.is_vintage()}")
-    print(f"{line.name} is_vintage() - Expected {True}. Got {line.is_vintage()}")
+    print(f"{line.name} is_vintage() - Expected {False}. Got {line.is_vintage()}")
 
 
 if __name__ == "__main__":
