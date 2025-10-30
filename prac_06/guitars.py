@@ -2,7 +2,7 @@
 CP1404 - Practical 6
 Guitar program.
 Estimate: 20 minutes
-Actual:
+Actual: 26 minutes
 """
 
 from prac_06.guitar import Guitar
