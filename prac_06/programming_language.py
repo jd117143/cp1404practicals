@@ -3,6 +3,7 @@ CP1404 - Practical 6
 ProgrammingLanguage class module.
 Estimate: 20 minutes
 Actual: 24 minutes
+(Time details for class module + client code combined)
 """
 
 
