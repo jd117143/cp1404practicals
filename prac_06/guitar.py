@@ -8,6 +8,8 @@ Actual:
 
 class Guitar:
     """Represent a Guitar object with key characteristics."""
+    CURRENT_YEAR = 2025
+    VINTAGE_AGE = 50
 
     def __init__(self, name="", year=0, cost=0):
         """Initialise a Guitar instance.
@@ -26,8 +28,8 @@ class Guitar:
 
     def get_age(self):
         """Get the age of a guitar based on the current year."""
-        return 2025 - self.year
+        return Guitar.CURRENT_YEAR - self.year
 
     def is_vintage(self):
         """Determine if a guitar is vintage based on its age."""
-        return self.get_age() >= 50
+        return self.get_age() >= Guitar.VINTAGE_AGE
