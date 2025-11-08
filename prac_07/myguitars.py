@@ -9,9 +9,10 @@ from prac_07.guitar import Guitar
 def main():
     """Run Guitar program."""
     guitars = []
-    load_guitars(guitars)
 
+    load_guitars(guitars)
     add_new_guitar(guitars)
+    save_guitars(guitars)
 
     guitars.sort()
 
@@ -20,8 +21,7 @@ def main():
 
 
 def load_guitars(guitars):
-    in_file = open('guitars.csv')
-    in_file.readline()
+    in_file = open("guitars.csv")
     for line in in_file:
         parts = line.strip().split(',')
         guitar = Guitar(parts[0], int(parts[1]), float(parts[2]))
@@ -38,6 +38,12 @@ def add_new_guitar(guitars):
         guitars.append(guitar)
         print(f"{guitar} added.\n")
         name = input("Name: ")
+
+
+def save_guitars(guitars):
+    with open("guitars.csv", "w") as out_file:
+        for guitar in guitars:
+            print(f"{guitar.name},{guitar.year},{guitar.cost}", file=out_file)
 
 
 if __name__ == "__main__":
