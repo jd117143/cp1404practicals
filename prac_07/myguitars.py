@@ -18,6 +18,8 @@ def main():
         guitars.append(guitar)
     in_file.close()
 
+    guitars.sort()
+
     for guitar in guitars:
         print(guitar)
 
