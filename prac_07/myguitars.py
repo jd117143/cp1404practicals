@@ -12,9 +12,8 @@ def main():
 
     load_guitars(guitars)
     add_new_guitar(guitars)
-    save_guitars(guitars)
-
     guitars.sort()
+    save_guitars(guitars)
 
     for guitar in guitars:
         print(guitar)
