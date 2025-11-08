@@ -21,6 +21,7 @@ def main():
 
 
 def load_guitars(guitars):
+    """Load guitars from CSV file."""
     in_file = open("guitars.csv")
     for line in in_file:
         parts = line.strip().split(',')
@@ -30,6 +31,7 @@ def load_guitars(guitars):
 
 
 def add_new_guitar(guitars):
+    """Add new guitar entry."""
     name = input("Name: ")
     while name != "":
         year = int(input("Year: "))
@@ -41,6 +43,7 @@ def add_new_guitar(guitars):
 
 
 def save_guitars(guitars):
+    """Save guitars to CSV file."""
     with open("guitars.csv", "w") as out_file:
         for guitar in guitars:
             print(f"{guitar.name},{guitar.year},{guitar.cost}", file=out_file)
