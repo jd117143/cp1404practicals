@@ -10,8 +10,7 @@ import datetime
 from prac_07.project import Project
 
 FILENAME = "projects.txt"
-MENU = """
-- (L)oad projects
+MENU = """- (L)oad projects
 - (S)ave projects
 - (D)isplay projects
 - (F)ilter projects by date
@@ -36,7 +35,7 @@ def main():
             filename = input("Filename: ")
             save_projects(projects, filename)
         elif choice == "D":
-            pass
+            display_projects(projects)
         elif choice == "F":
             pass
         elif choice == "A":
@@ -76,6 +75,19 @@ def save_projects(projects, filename=FILENAME):
             start_date_string = project.start_date.strftime("%d/%m/%Y")
             print(f"{project.name}\t{start_date_string}\t{project.priority}\t{project.cost_estimate:.2f}\t"
                   f"{project.completion_percentage}", file=out_file)
+
+
+def display_projects(projects):
+    """Display projects, sorted by priority."""
+    incomplete_projects = sorted([project for project in projects if not project.is_complete()])
+    print("Incomplete projects: ")
+    for project in incomplete_projects:
+        print(f"  {project}")
+
+    completed_projects = sorted([project for project in projects if project.is_complete()])
+    print("Completed projects: ")
+    for project in completed_projects:
+        print(f"  {project}")
 
 
 if __name__ == '__main__':
