@@ -7,8 +7,9 @@ Actual: 2 hours, 27 minutes
 """
 
 import datetime
-from prac_07.project import Project
 from operator import attrgetter
+from project import Project
+
 
 FILENAME = "projects.txt"
 MENU = """- (L)oad projects
@@ -78,8 +79,8 @@ def save_projects(projects, filename=FILENAME):
     with open(filename, "w") as out_file:
         for project in projects:
             start_date_string = project.start_date.strftime("%d/%m/%Y")
-            print(f"{project.name}\t{start_date_string}\t{project.priority}\t{project.cost_estimate:.2f}\t"
-                  f"{project.completion_percentage}", file=out_file)
+            print(f"{project.name}\t{start_date_string}\t{project.priority}\t"
+                  f"{project.cost_estimate:.2f}\t{project.completion_percentage}", file=out_file)
 
 
 def display_projects(projects):
@@ -109,7 +110,8 @@ def add_project(projects):
     """Add new project entry."""
     print("Let's add a new project")
     name = get_non_blank_input("Name: ")
-    start_date = datetime.datetime.strptime(get_non_blank_input("Start date (dd/mm/yy): "), "%d/%m/%Y").date()
+    start_date = datetime.datetime.strptime(get_non_blank_input("Start date (dd/mm/yy): "),
+                                            "%d/%m/%Y").date()
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost Estimate: $"))
     completion_percentage = int(input("Percent complete: "))
