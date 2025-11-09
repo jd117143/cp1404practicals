@@ -96,7 +96,7 @@ def filter_projects(projects):
     date_string = input("Show projects that start after (dd/mm/yy): ")
     filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
     filtered_projects = [project for project in projects if project.start_date >= filter_date]
-    filtered_projects.sort(key=attrgetter('priority'))
+    filtered_projects.sort(key=attrgetter("start_date"))
     for project in filtered_projects:
         print(f"{project}")
 
