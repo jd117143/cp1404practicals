@@ -108,13 +108,22 @@ def filter_projects(projects):
 def add_project(projects):
     """Add new project entry."""
     print("Let's add a new project")
-    name = input("Name: ")
-    start_date = datetime.datetime.strptime(input("Start date (dd/mm/yy): "), "%d/%m/%Y").date()
+    name = get_non_blank_input("Name: ")
+    start_date = datetime.datetime.strptime(get_non_blank_input("Start date (dd/mm/yy): "), "%d/%m/%Y").date()
     priority = int(input("Priority: "))
     cost_estimate = float(input("Cost Estimate: $"))
     completion_percentage = int(input("Percent complete: "))
     project = Project(name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(project)
+
+
+def get_non_blank_input(prompt):
+    """Get non-blank user input."""
+    response = input(prompt).strip()
+    while response == "":
+        print("Input can not be blank")
+        response = input(prompt).strip()
+    return response
 
 
 def update_project(projects):
