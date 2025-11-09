@@ -2,7 +2,7 @@
 CP1404 - Practical 7
 Project class module.
 Estimate: 1 hour, 30 minutes
-Actual:
+Actual: 2 hours, 27 minutes
 (Time details for Project class module + project management combined)
 """
 

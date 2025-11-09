@@ -1,8 +1,8 @@
 """
 CP1404 - Practical 7
-Project Management program.
+Project Management program for loading, displaying, and updating data.
 Estimate: 1 hour, 30 minutes
-Actual:
+Actual: 2 hours, 27 minutes
 (Time details for Project class module + project management combined)
 """
 
@@ -97,7 +97,7 @@ def display_projects(projects):
 
 def filter_projects(projects):
     """Display projects that start after input date."""
-    date_string = input("Show projects that start after (dd/mm/yy): ")
+    date_string = get_non_blank_input("Show projects that start after (dd/mm/yy): ")
     filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
     filtered_projects = [project for project in projects if project.start_date >= filter_date]
     filtered_projects.sort(key=attrgetter("start_date"))
