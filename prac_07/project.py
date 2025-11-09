@@ -23,8 +23,12 @@ class Project:
     def __str__(self):
         """Return a string representation of a Project object."""
         start_date_string = self.start_date.strftime("%d/%m/%Y")
-        return (f"{self.name}, start: {start_date_string}, priority {self.priority}"
+        return (f"{self.name}, start: {start_date_string}, priority {self.priority}, "
                 f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}%")
+
+    def __lt__(self, other):
+        """Return True if the self priority is less than the other priority."""
+        return self.priority < other.priority
 
     def is_complete(self):
         """Return True if the project is completed."""
