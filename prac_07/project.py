@@ -6,8 +6,6 @@ Actual: 2 hours, 27 minutes
 (Time details for Project class module + project management combined)
 """
 
-import datetime
-
 
 class Project:
     """Represent a Project object with key characteristics."""
