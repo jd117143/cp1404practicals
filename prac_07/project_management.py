@@ -33,7 +33,8 @@ def main():
             filename = input("Filename: ")
             projects = load_projects(filename)
         elif choice == "S":
-            pass
+            filename = input("Filename: ")
+            save_projects(projects, filename)
         elif choice == "D":
             pass
         elif choice == "F":
@@ -50,7 +51,7 @@ def main():
 
 
 def load_projects(filename=FILENAME):
-    """Load projects from CSV file."""
+    """Load projects from file."""
     projects = []
     with open(filename) as in_file:
         in_file.readline()
@@ -66,6 +67,15 @@ def load_projects(filename=FILENAME):
             projects.append(project)
         print(f"Loaded {len(projects)} from {filename}")
     return projects
+
+
+def save_projects(projects, filename=FILENAME):
+    """Save projects to file."""
+    with open(filename, "w") as out_file:
+        for project in projects:
+            start_date_string = project.start_date.strftime("%d/%m/%Y")
+            print(f"{project.name}\t{start_date_string}\t{project.priority}\t{project.cost_estimate:.2f}\t"
+                  f"{project.completion_percentage}", file=out_file)
 
 
 if __name__ == '__main__':
