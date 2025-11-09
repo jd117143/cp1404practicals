@@ -57,7 +57,7 @@ def load_projects(filename=FILENAME):
     """Load projects from file."""
     projects = []
     try:
-        with open(filename) as in_file:
+        with open(filename, encoding="utf-8") as in_file:
             in_file.readline()
             for line in in_file:
                 parts = line.strip().split("\t")
@@ -76,7 +76,7 @@ def load_projects(filename=FILENAME):
 
 def save_projects(projects, filename=FILENAME):
     """Save projects to file."""
-    with open(filename, "w") as out_file:
+    with open(filename, "w", encoding="utf-8") as out_file:
         for project in projects:
             start_date_string = project.start_date.strftime("%d/%m/%Y")
             print(f"{project.name}\t{start_date_string}\t{project.priority}\t"
