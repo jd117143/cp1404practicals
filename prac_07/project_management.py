@@ -46,6 +46,8 @@ def main():
             print("Invalid menu choice")
         print(MENU)
         choice = input(">>> ").upper()
+    if input(f"Would you like to save to {FILENAME}? (y/n) ").upper() == "Y":
+        save_projects(projects, FILENAME)
     print("Thank you for using custom-built project management software.")
 
 
