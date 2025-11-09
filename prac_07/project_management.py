@@ -55,18 +55,21 @@ def main():
 def load_projects(filename=FILENAME):
     """Load projects from file."""
     projects = []
-    with open(filename) as in_file:
-        in_file.readline()
-        for line in in_file:
-            parts = line.strip().split("\t")
-            name = parts[0]
-            start_date = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
-            priority = int(parts[2])
-            cost_estimate = float(parts[3])
-            completion_percentage = int(parts[4])
+    try:
+        with open(filename) as in_file:
+            in_file.readline()
+            for line in in_file:
+                parts = line.strip().split("\t")
+                name = parts[0]
+                start_date = datetime.datetime.strptime(parts[1], "%d/%m/%Y").date()
+                priority = int(parts[2])
+                cost_estimate = float(parts[3])
+                completion_percentage = int(parts[4])
 
-            project = Project(name, start_date, priority, cost_estimate, completion_percentage)
-            projects.append(project)
+                project = Project(name, start_date, priority, cost_estimate, completion_percentage)
+                projects.append(project)
+    except FileNotFoundError:
+        print("File not found!")
     return projects
 
 
