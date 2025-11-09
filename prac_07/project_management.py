@@ -23,7 +23,8 @@ MENU = """- (L)oad projects
 def main():
     """Run the Project Management program."""
     print("Welcome to Project Management")
-    projects = load_projects()
+    projects = load_projects(FILENAME)
+    print(f"Loaded {len(projects)} from {FILENAME}")
 
     print(MENU)
     choice = input(">>> ").upper()
@@ -66,7 +67,6 @@ def load_projects(filename=FILENAME):
 
             project = Project(name, start_date, priority, cost_estimate, completion_percentage)
             projects.append(project)
-        print(f"Loaded {len(projects)} from {filename}")
     return projects
 
 
