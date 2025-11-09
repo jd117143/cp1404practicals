@@ -40,7 +40,7 @@ def main():
         elif choice == "F":
             filter_projects(projects)
         elif choice == "A":
-            pass
+            add_project(projects)
         elif choice == "U":
             pass
         else:
@@ -99,6 +99,17 @@ def filter_projects(projects):
     filtered_projects.sort(key=attrgetter('priority'))
     for project in filtered_projects:
         print(f"{project}")
+
+
+def add_project(projects):
+    print("Let's add a new project")
+    name = input("Name: ")
+    start_date = datetime.datetime.strptime(input("Start date (dd/mm/yy): "), "%d/%m/%Y").date()
+    priority = int(input("Priority: "))
+    cost_estimate = float(input("Cost Estimate: $"))
+    completion_percentage = int(input("Percent complete: "))
+    project = Project(name, start_date, priority, cost_estimate, completion_percentage)
+    projects.append(project)
 
 
 if __name__ == '__main__':
