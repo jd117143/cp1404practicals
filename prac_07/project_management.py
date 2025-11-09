@@ -17,13 +17,12 @@ MENU = """- (L)oad projects
 - (F)ilter projects by date
 - (A)dd new project
 - (U)pdate project
-- (Q)uit
-"""
+- (Q)uit"""
 
 
 def main():
     """Run the Project Management program."""
-    print("Welcome to Project Manager")
+    print("Welcome to Project Management")
     projects = load_projects()
 
     print(MENU)
@@ -42,7 +41,7 @@ def main():
         elif choice == "A":
             add_project(projects)
         elif choice == "U":
-            pass
+            update_project(projects)
         else:
             print("Invalid menu choice")
         print(MENU)
@@ -102,6 +101,7 @@ def filter_projects(projects):
 
 
 def add_project(projects):
+    """Add new project entry."""
     print("Let's add a new project")
     name = input("Name: ")
     start_date = datetime.datetime.strptime(input("Start date (dd/mm/yy): "), "%d/%m/%Y").date()
@@ -110,6 +110,20 @@ def add_project(projects):
     completion_percentage = int(input("Percent complete: "))
     project = Project(name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(project)
+
+
+def update_project(projects):
+    """Update completion or priority details of chosen project."""
+    for i, project in enumerate(projects):
+        print(f"{i} {project}")
+
+    choice = int(input("Project choice: "))
+    project = projects[choice]
+    print(project)
+
+    new_completion_percentage = input("New Percentage: ")
+    new_priority = input("New Priority: ")
+    project.update_details(new_priority, new_completion_percentage)
 
 
 if __name__ == '__main__':
