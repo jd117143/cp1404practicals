@@ -8,6 +8,7 @@ Actual:
 
 import datetime
 from prac_07.project import Project
+from operator import attrgetter
 
 FILENAME = "projects.txt"
 MENU = """- (L)oad projects
@@ -37,7 +38,7 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            pass
+            filter_projects(projects)
         elif choice == "A":
             pass
         elif choice == "U":
@@ -88,6 +89,16 @@ def display_projects(projects):
     print("Completed projects: ")
     for project in completed_projects:
         print(f"  {project}")
+
+
+def filter_projects(projects):
+    """Display projects that start after input date."""
+    date_string = input("Show projects that start after (dd/mm/yy): ")
+    filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    filtered_projects = [project for project in projects if project.start_date >= filter_date]
+    filtered_projects.sort(key=attrgetter('priority'))
+    for project in filtered_projects:
+        print(f"{project}")
 
 
 if __name__ == '__main__':
