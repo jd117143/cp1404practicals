@@ -33,3 +33,10 @@ class Project:
     def is_complete(self):
         """Return True if the project is completed."""
         return self.completion_percentage == 100
+
+    def update_details(self, new_priority, new_completion_percentage):
+        """Update priority or completion percentage if new non-blank values are given."""
+        if new_priority != "":
+            self.priority = int(new_priority)
+        if new_completion_percentage != "":
+            self.completion_percentage = int(new_completion_percentage)
