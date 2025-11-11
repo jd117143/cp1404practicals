@@ -10,7 +10,8 @@ from kivy.properties import StringProperty
 
 class MilesToKilometresApp(App):
     """MilesToKilometres is a Kivy App for converting miles to kilometres"""
-    message = StringProperty()
+    output_text = StringProperty()
+
 
     def build(self):
         """Build the Kivy App from the .kv file"""
@@ -19,7 +20,10 @@ class MilesToKilometresApp(App):
         return self.root
 
     def handle_calculate(self):
-        self.message = self.root.ids.input_number.text
+        """Handle calculation (could be button press or other call), output result to label widget """
+        value = self.root.ids.input_number.text
+        result = float(value) * 1.6093
+        self.output_text = str(result)
 
 
 MilesToKilometresApp().run()
