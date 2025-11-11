@@ -7,6 +7,8 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.properties import StringProperty
 
+MILES_TO_KM = 1.6093
+
 
 class MilesToKilometresApp(App):
     """MilesToKilometres is a Kivy App for converting miles to kilometres"""
@@ -21,7 +23,7 @@ class MilesToKilometresApp(App):
     def handle_calculate(self):
         """Handle calculation (could be button press or other call), output result to label widget."""
         value = self.get_valid_number()
-        result = value * 1.6093
+        result = value * MILES_TO_KM
         self.output_text = str(result)
 
     def handle_increment(self, increment):
