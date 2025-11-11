@@ -15,8 +15,8 @@ BoxLayout:
                 text: 'Down'
     Button:
         text: 'Convert m to km'
+        on_press: app.handle_calculate()
     Label:
-        id: output_label
-        text: app.message
+        text: app.output_text
         font_size: 48
         color: (1, 1, 0, 1)
