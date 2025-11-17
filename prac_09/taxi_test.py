@@ -5,7 +5,7 @@ Taxi class client code.
 
 from prac_09.taxi import Taxi
 
-my_taxi = Taxi("Prius 1", 100, 1.23)
+my_taxi = Taxi("Prius 1", 100)
 print(f"Initial:\n{my_taxi}")
 print(f"Current fare: ${my_taxi.get_fare()}\n")
 my_taxi.drive(40)
