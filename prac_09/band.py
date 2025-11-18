@@ -22,4 +22,4 @@ class Band:
 
     def play(self):
         """Return a string showing each musician playing their first (or no) instrument."""
-        return
+        return "\n".join(musician.play() for musician in self.musicians)
